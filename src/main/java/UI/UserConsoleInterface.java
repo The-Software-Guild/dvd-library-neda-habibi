@@ -14,33 +14,35 @@ public class UserConsoleInterface implements IUserInterface{
 
     @Override
     public void showAllDvdList(List<DVD> DVDList){
-        for (DVD currentDVD : DVDList) {
-            String dvdInfo = String.format("Title: %s Studio: %s Rating: %s Release Date: %s Director: %s User Rating: %s",
-                    currentDVD.getTitle(),
-                    currentDVD.getStudio(),
-                    currentDVD.getRating(),
-                    currentDVD.getReleaseDate(),
-                    currentDVD.getDirectorName(),
-                    currentDVD.getUserRating());
+        for (DVD dvd : DVDList) {
+            String dvdInfo = String.format("Title: %s | Studio: %s | Rating: %s | Release Date: %s | Director: %s | User Rating: %s",
+                    dvd.getTitle(),
+                    dvd.getStudio(),
+                    dvd.getRating(),
+                    dvd.getReleaseDate(),
+                    dvd.getDirectorName(),
+                    dvd.getUserRating());
             System.out.println(dvdInfo);
         }
         System.out.println("");
     }
 
     @Override
-    public String searchDvd(String title){
+    public String searchDvd(){
         return readString("Enter the Title:");
     }
 
     @Override
     public void showDvd(DVD dvd) {
         if (dvd != null) {
-            System.out.println(dvd.getTitle());
-            System.out.println(dvd.getStudio());
-            System.out.println(dvd.getRating());
-            System.out.println(dvd.getReleaseDate().toString());
-            System.out.println(dvd.getDirectorName());
-            System.out.println(dvd.getUserRating());
+            String dvdInfo = String.format("Title: %s | Studio: %s | Rating: %s | Release Date: %s | Director: %s | User Rating: %s",
+                    dvd.getTitle(),
+                    dvd.getStudio(),
+                    dvd.getRating(),
+                    dvd.getReleaseDate(),
+                    dvd.getDirectorName(),
+                    dvd.getUserRating());
+            System.out.println(dvdInfo);
         } else {
             System.out.println("DVD not found!");
         }
