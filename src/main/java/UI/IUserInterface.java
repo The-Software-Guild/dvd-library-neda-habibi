@@ -14,7 +14,7 @@ public interface IUserInterface {
 
     void showAllDvdList(List<DVD> DVDList);
 
-    public String searchDvd(String title);
+    public String searchDvd();
 
     void showDvd(DVD dvd);
 }
